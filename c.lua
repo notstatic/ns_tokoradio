@@ -83,17 +83,6 @@ function d()
     end)
 end
 
-RegisterNetEvent('esx_tokoradio:radio')
-AddEventHandler('esx_tokoradio:radio', function(j)
-    local k = j
-    if not k then
-        if h ~= nil then
-            exports.tokovoip_script:removePlayerFromRadio(h)
-            h = nil
-        end
-    end
-end)
-
 RegisterCommand('radio', function()
     d()
 end)
