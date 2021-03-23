@@ -1,4 +1,4 @@
-# s_tokoradio
+# ns_tokoradio
 
 Resurssi mahdollistaa radioiden käytön tokovoipin kanssa.
 
