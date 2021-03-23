@@ -1,5 +1,7 @@
 # ns_tokoradio
 
+
+### FI 
 Resurssi mahdollistaa radioiden käytön tokovoipin kanssa.
 
 Lisää tämä tokovoip_script\s_config.lua:
@@ -16,6 +18,7 @@ TokoVoipConfig = {
 	}
 };
 ```
+### EN
 
 This resource is giving possibility to use radios with tokovoip.
 
