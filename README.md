@@ -16,3 +16,21 @@ TokoVoipConfig = {
 	}
 };
 ```
+
+This resource is giving possibility to use radios with tokovoip.
+
+
+Add this to tokovoip_script\s_config.lua:
+
+```
+TokoVoipConfig = {
+	channels = {
+		{name = "PD/SO 1", subscribers = {}},
+		{name = "PD/SO 2", subscribers = {}},
+		{name = "PD/SO 3", subscribers = {}},
+		{name = "EMS", subscribers = {}},
+		{name = "Mechanic", subscribers = {}},
+		{name = "Taxi", subscribers = {}}
+	}
+};
+```
