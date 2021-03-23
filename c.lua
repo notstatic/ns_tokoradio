@@ -21,7 +21,7 @@ end)
 
 function d()
     local e = {}
-
+    local getPlayerRadioChannel = exports.tokovoip_script:getPlayerData(GetPlayerName(PlayerId()), "radio:channel")
     if b.job.name == 'police' then
         table.insert(e, {label = 'Virkavalta 1', value = 1})
         table.insert(e, {label = 'Virkavalta 2', value = 2})
@@ -47,7 +47,8 @@ function d()
         function(f,g)
         g.close()
         if h ~= nil then
-            exports.tokovoip_script:removePlayerFromRadio(h)
+            exports.tokovoip_script:removePlayerFromRadio(getPlayerRadioChannel)
+            exports.tokovoip_script:setPlayerData(GetPlayerName(PlayerId()), "radio:channel", "nil", true)
             h = nil
         end
         if f.current.value == 'l' then
@@ -61,14 +62,19 @@ function d()
             Citizen.Wait(300)
             if i ~= nil and i > 10 and i < 100 then
                 h = i
-                exports.tokovoip_script:addPlayerToRadio(h, true)
+                exports.tokovoip_script:removePlayerFromRadio(getPlayerRadioChannel)
+                exports.tokovoip_script:setPlayerData(GetPlayerName(PlayerId()), "radio:channel", tonumber(h), true);
+                exports.tokovoip_script:addPlayerToRadio(tonumber(h))
                 a.ShowNotification('Liityit avoimelle radiotaajuudelle '..h..' MHz')
             end
         elseif f.current.value == 'p' then
-            exports.tokovoip_script:removePlayerFromRadio(h)
+            exports.tokovoip_script:removePlayerFromRadio(getPlayerRadioChannel)
+            exports.tokovoip_script:setPlayerData(playerName, "radio:channel", "nil", true)
             h = nil
         else
-            exports.tokovoip_script:addPlayerToRadio(f.current.value, true)
+            exports.tokovoip_script:removePlayerFromRadio(getPlayerRadioChannel)
+            exports.tokovoip_script:setPlayerData(GetPlayerName(PlayerId()), "radio:channel", tonumber(f.current.value), true);
+            exports.tokovoip_script:addPlayerToRadio(tonumber(f.current.value))
         end
 
         end, 
