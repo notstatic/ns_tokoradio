@@ -69,7 +69,7 @@ function d()
             end
         elseif f.current.value == 'p' then
             exports.tokovoip_script:removePlayerFromRadio(getPlayerRadioChannel)
-            exports.tokovoip_script:setPlayerData(GetPlayerName(PlayerId(), "radio:channel", "nil", true)
+            exports.tokovoip_script:setPlayerData(GetPlayerName(PlayerId()), "radio:channel", "nil", true)
             h = nil
         else
             exports.tokovoip_script:removePlayerFromRadio(getPlayerRadioChannel)
