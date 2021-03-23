@@ -60,7 +60,7 @@ function d()
             local i = GetOnscreenKeyboardResult()
             i = tonumber(i)
             Citizen.Wait(300)
-            if i ~= nil and i > 10 and i < 100 then
+            if i ~= nil and i >= 10 and i <= 99.9 then
                 h = i
                 exports.tokovoip_script:removePlayerFromRadio(getPlayerRadioChannel)
                 exports.tokovoip_script:setPlayerData(GetPlayerName(PlayerId()), "radio:channel", tonumber(h), true);
@@ -103,7 +103,4 @@ AddEventHandler('esx_tokoradio:ur', function()
     d()
 end)
 
-Citizen.CreateThread(function()
-    Citizen.Wait(5000)
-    RegisterKeyMapping('radio', 'Käytä radiota', "keyboard", 28) -- keymappingit radiolle
-end)
+RegisterKeyMapping('radio', 'Avaa radio', "keyboard", 28) -- keymappingit radiolle
